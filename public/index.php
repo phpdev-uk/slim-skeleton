@@ -35,6 +35,7 @@ $container->set('view', function() {
         ]
     );
     $twig->addExtension(new IntlExtension());
+
     return $twig;
 });
 
