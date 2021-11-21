@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  web:
+    build: docker/
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/var/www/sites/docker.localhost
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - database
+
+  database:
+    image: mariadb:10.6
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "docker"
+      MYSQL_USER: "docker"
+      MYSQL_PASSWORD: "docker"
+    ports:
+      - "33068:3306"
+    volumes:
+      - database:/var/lib/mysql
+      - ./docker/mysql/initial_sql/:/docker-entrypoint-initdb.d/:ro
+
+volumes:
+  database:
