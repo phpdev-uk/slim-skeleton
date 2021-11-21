@@ -56,6 +56,7 @@ $container->set('database', function() {
 // Register all controllers
 $container->set('PageController', function (ContainerInterface $container) {
     $view = $container->get('view');
+
     return new PageController($view);
 });
 
