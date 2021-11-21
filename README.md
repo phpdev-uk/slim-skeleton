@@ -11,3 +11,11 @@ Create a project via Composer:
 Copy the `.env.dist` file:
 
 `cp .env.dist .env`
+
+Make any changes to `.env`.
+
+Start Docker:
+
+`docker-compose up`
+
+Visit `docker.localhost` in your browser.
