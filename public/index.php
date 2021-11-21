@@ -53,6 +53,6 @@ $app->get('/', function(
         'index.twig.html',
         []
     );
-});
+})->setName('index');
 
 $app->run();
