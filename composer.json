@@ -1,4 +1,15 @@
 {
+    "name": "phpdev-uk/slim-skeleton",
+    "description": "Skeleton Slim 4 application",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul Waring",
+            "email": "paul@phpdeveloper.org.uk",
+            "homepage": "https://www.phpdev.uk"
+        }
+    ],
     "require": {
         "php": ">=7.4",
         "ext-mysqli": "*",
