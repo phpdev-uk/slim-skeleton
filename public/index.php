@@ -38,6 +38,20 @@ $container->set('view', function() {
     return $twig;
 });
 
+$container->set('database', function() {
+    $connection = [
+        'driver' => 'pdo_mysql',
+        'user' => $_ENV['APP_DATABASE_USER'],
+        'password' => $_ENV['APP_DATABASE_PASSWORD'],
+        'dbname' => $_ENV['APP_DATABASE_NAME'],
+        'host' => $_ENV['APP_DATABASE_HOST']
+    ];
+
+    $config = Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration([]);
+
+    return Doctrine\ORM\EntityManager::create($connection, $config);
+});
+
 // Register all controllers
 $container->set('PageController', function (ContainerInterface $container) {
     $view = $container->get('view');
