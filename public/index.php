@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use App\Controllers\PageController;
 use DI\Container;
+use Psr\Container\ContainerInterface;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
@@ -26,6 +26,7 @@ date_default_timezone_set($_ENV['APP_DEFAULT_TIMEZONE']);
 $container = new Container();
 AppFactory::setContainer($container);
 
+// Register all dependencies
 $container->set('view', function() {
     $twig = Twig::create(
         __DIR__ . '/../templates',
@@ -37,22 +38,18 @@ $container->set('view', function() {
     return $twig;
 });
 
+// Register all controllers
+$container->set('PageController', function (ContainerInterface $container) {
+    $view = $container->get('view');
+    return new PageController($view);
+});
+
 $app = AppFactory::create();
 
 $app->addRoutingMiddleware();
 $app->addBodyParsingMiddleware();
 $app->add(TwigMiddleware::createFromContainer($app));
 
-$app->get('/', function(
-    ServerRequestInterface $request,
-    ResponseInterface $response,
-    array $args
-): ResponseInterface {
-    return $this->get('view')->render(
-        $response,
-        'index.twig.html',
-        []
-    );
-})->setName('index');
+$app->get('/', 'PageController:index')->setName('index');
 
 $app->run();
