@@ -12,6 +12,12 @@ services:
       - "host.docker.internal:host-gateway"
     depends_on:
       - database
+      - mailhog
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "8025:8025"
 
   database:
     image: mariadb:10.6
