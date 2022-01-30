@@ -37,5 +37,10 @@
         "psr-4": {
             "App\\Test\\": "tests/"
         }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
     }
 }
