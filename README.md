@@ -14,6 +14,8 @@ add `phpdev-uk/slim-skeleton` as a dependency):
 
 `composer create-project phpdev-uk/slim-skeleton:dev-main my-app`
 
+Set your PHP version in `composer.json`.
+
 Change any image versions in `docker-compose.yml` to match your production environment.
 
 Copy the `.env.dist` file:
