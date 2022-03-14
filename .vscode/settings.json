@@ -1,0 +1,6 @@
+{
+    "search.exclude": {
+        "vendor/**": true,
+        "docker/mysql/initial_sql/*.sql": true
+    }
+}
