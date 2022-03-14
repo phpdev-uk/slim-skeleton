@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use App\Controllers\PageController;
 use DI\Container;
@@ -16,8 +16,8 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 if ($_ENV['APP_WHOOPS'] === 'on') {
-    $whoops = new \Whoops\Run;
-    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops = new \Whoops\Run();
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
     $whoops->register();
 }
 
@@ -27,7 +27,7 @@ $container = new Container();
 AppFactory::setContainer($container);
 
 // Register all dependencies
-$container->set('view', function() {
+$container->set('view', function () {
     $twig = Twig::create(
         __DIR__ . '/../templates',
         [
@@ -39,7 +39,7 @@ $container->set('view', function() {
     return $twig;
 });
 
-$container->set('database', function() {
+$container->set('database', function () {
     $connection = [
         'driver' => 'pdo_mysql',
         'user' => $_ENV['APP_DATABASE_USER'],
