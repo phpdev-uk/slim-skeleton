@@ -1,0 +1,9 @@
+parameters:
+  level: 0
+  paths:
+    - .
+  excludePaths:
+    analyse:
+      - vendor
+  fileExtensions:
+    - php
