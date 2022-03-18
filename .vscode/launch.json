@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for Xdebug in Docker",
+            "type": "php",
+            "request": "launch",
+            "log": true,
+            "port": 9003,
+            "stopOnEntry": true,
+            "xdebugSettings": {
+                "max_data": -1
+            },
+            "pathMappings": {
+                "/var/www/sites/docker.localhost": "${workspaceFolder}"
+            }
+        }
+    ]
+}
