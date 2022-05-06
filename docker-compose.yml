@@ -20,7 +20,7 @@ services:
       - "8025:8025"
 
   database:
-    image: mariadb:latest
+    image: mariadb:10.5
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_DATABASE: "docker"

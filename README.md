@@ -35,4 +35,5 @@ Visit [https://docker.localhost](https://docker.localhost) in your browser.
 This skeleton application makes the following assumptions about your application environment:
 
 * PHP 7.4
-* Single MySQL database
+* Single MariaDB database
+* Debian Bullseye (latest stable release)
