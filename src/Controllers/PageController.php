@@ -8,6 +8,9 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
 
+/**
+ * Generic controller for static pages which render a template.
+ */
 class PageController
 {
     private $view;
