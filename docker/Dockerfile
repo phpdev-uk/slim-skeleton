@@ -20,7 +20,7 @@ RUN /usr/bin/openssl genrsa -out ${PRIVATE_KEY_PATH} 2048
 RUN /usr/bin/openssl req -new -x509 -key ${PRIVATE_KEY_PATH} -out ${CERTIFICATE_PATH} -days 90 -subj /CN=${SSL_CN}
 
 COPY apache/sites-available/${SITE_HOST}.conf /etc/apache2/sites-available/
-COPY php/xdebug.ini /usr/local/etc/php/conf.d/zz-xdebug.ini
+COPY php/* /usr/local/etc/php/conf.d/*
 RUN a2enmod rewrite ssl
 RUN a2ensite ${SITE_HOST}
 RUN service apache2 restart
