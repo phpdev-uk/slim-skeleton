@@ -55,7 +55,7 @@ $container->set('database', function () {
 });
 
 // Register all controllers
-$container->set('PageController', function (ContainerInterface $container) {
+$container->set(PageController::class, function (ContainerInterface $container) {
     $view = $container->get('view');
 
     return new PageController($view);
@@ -68,6 +68,6 @@ $app->addBodyParsingMiddleware();
 $app->add(TwigMiddleware::createFromContainer($app));
 
 // Register all routes
-$app->get('/', 'PageController:index')->setName('index');
+$app->get('/', PageController::class . ':index')->setName('index');
 
 $app->run();
