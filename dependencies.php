@@ -14,7 +14,9 @@ use Twig\Extra\Intl\IntlExtension;
 $dotenv = Dotenv::createImmutable(__DIR__ . '/');
 $dotenv->load();
 
-if ($_ENV['APP_WHOOPS'] === 'on') {
+define('WHOOPS_ENABLED', isset($_ENV['PAD_WHOOPS']) && $_ENV['PAD_WHOOPS'] === 'on');
+
+if (WHOOPS_ENABLED) {
     $whoops = new \Whoops\Run();
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
     $whoops->register();
