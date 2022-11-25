@@ -67,7 +67,6 @@ $app->addRoutingMiddleware();
 $app->addBodyParsingMiddleware();
 $app->add(TwigMiddleware::createFromContainer($app));
 
-// Register all routes
-$app->get('/', PageController::class . ':index')->setName('index');
+require_once __DIR__ . '/../routes.php';
 
 $app->run();
