@@ -37,3 +37,13 @@ This skeleton application makes the following assumptions about your application
 * PHP 7.4
 * Single MariaDB database
 * Debian Bullseye (latest stable release)
+
+## Included libraries
+
+Although you do not have to use them, this package includes the following libraries:
+
+ * Doctrine ORM: Create PHP classes to map to your database structure.
+ * Doctrine Migrations: Manage changes to your database schemas.
+
+If you are using a database in your application, the above libraries are likely to make
+your life much easier.
