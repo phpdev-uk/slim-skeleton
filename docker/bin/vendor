@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -x
+
+docker-compose exec --user www-data web \
+  /var/www/sites/docker.localhost/vendor/bin/$*

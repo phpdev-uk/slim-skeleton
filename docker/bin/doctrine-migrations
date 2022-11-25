@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -x
+
+docker-compose exec --user www-data web \
+  /var/www/sites/docker.localhost/vendor/bin/doctrine-migrations \
+  $* \
+  --configuration /var/www/sites/docker.localhost/migrations.php \
+  --db-configuration /var/www/sites/docker.localhost/migrations-db.php

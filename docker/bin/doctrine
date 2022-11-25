@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -x
+
+docker-compose exec --user www-data web \
+  /usr/local/bin/php \
+  /var/www/sites/docker.localhost/bin/doctrine.php $*
