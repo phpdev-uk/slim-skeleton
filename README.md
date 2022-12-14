@@ -7,6 +7,9 @@ dependencies and a local development environment using Docker. It is only
 intended to be used as an initial bootstrap - after that you should commit your
 changes to your own Git repository and manage your Composer dependencies.
 
+If you are using Visual Studio Code, there are also some settings to integrate
+Xdebug and to ignore third party libraries (`vendor/`) and the database file.
+
 ## Installation
 
 Create a project via Composer (do **not** use `composer require` as this will
