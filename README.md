@@ -21,10 +21,6 @@ Set your PHP version in `composer.json`.
 
 Change any image versions in `docker-compose.yml` to match your production environment.
 
-Copy the `.env.dist` file:
-
-`cp .env.dist .env`
-
 Make any changes to `.env`.
 
 Start Docker:
