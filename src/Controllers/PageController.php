@@ -28,13 +28,4 @@ class PageController
             []
         );
     }
-
-    public function csrf(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
-    {
-        return $this->view->render(
-            $response,
-            'index.twig.html',
-            []
-        );
-    }
 }
