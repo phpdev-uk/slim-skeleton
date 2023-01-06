@@ -18,9 +18,9 @@ use Twig\Extra\Intl\IntlExtension;
 $dotenv = Dotenv::createImmutable(__DIR__ . '/');
 $dotenv->load();
 
-define('WHOOPS_ENABLED', isset($_ENV['APP_WHOOPS']) && $_ENV['APP_WHOOPS'] === 'on');
+define('APP_WHOOPS_ENABLED', isset($_ENV['APP_WHOOPS']) && $_ENV['APP_WHOOPS'] === 'on');
 
-if (WHOOPS_ENABLED) {
+if (APP_WHOOPS_ENABLED) {
     $whoops = new \Whoops\Run();
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
     $whoops->register();
@@ -86,7 +86,7 @@ $app->addRoutingMiddleware();
 $app->addBodyParsingMiddleware();
 $app->add(TwigMiddleware::createFromContainer($app));
 
-if (!WHOOPS_ENABLED) {
+if (!APP_WHOOPS_ENABLED) {
     $errorMiddleware = new ErrorMiddleware(
         $app->getCallableResolver(),
         $app->getResponseFactory(),
