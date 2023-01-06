@@ -2,5 +2,11 @@
 {% block title %}Home page{% endblock %}
 {% block content %}
   <p>Home page</p>
+
+  <h2>CSRF example</h2>
+  <form action="{{ url_for('csrf')}}" method="POST">
+    {{ csrf() | raw }}
+    <button type="submit">Submit</button>
+  </form>
 {% endblock %}
  
