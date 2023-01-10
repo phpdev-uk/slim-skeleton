@@ -10,6 +10,8 @@ services:
       - .:/var/www/sites/docker.localhost
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    environment:
+      - DOCKER_RUNNING=yes
     depends_on:
       - database
       - mailhog
