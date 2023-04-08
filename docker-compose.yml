@@ -14,10 +14,10 @@ services:
       - DOCKER_RUNNING=yes
     depends_on:
       - database
-      - mailhog
+      - mailpit
 
-  mailhog:
-    image: mailhog/mailhog:latest
+  mailpit:
+    image: axllent/mailpit:v1.5.4
     ports:
       - "8025:8025"
 
