@@ -53,3 +53,7 @@ This skeleton repository comes with an `AuthRequired` middleware class, which ca
 to place routes behind a authentication wall. You will need to either make sure that your
 authentication code sets `$_SESSION['logged_in']` to `true` when the user is authenticated,
 or edit the class to use your authentication process.
+
+The setup assumes that you are using sessions for authentication. In order for `session_start`
+to be called, you must enable CSRF protection in your `.env` file (it is enabled by default).
+Authentication without CSRF is **not** recommended.
