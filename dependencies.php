@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Controllers\PageController;
+use App\Middleware\AuthRequired;
 use App\TwigExtension\CsrfExtension;
 use DI\Container;
 use Doctrine\DBAL\DriverManager;
@@ -77,6 +78,11 @@ $container->set('database', static function () {
     );
 
     return new EntityManager($connection, $config);
+});
+
+// Register all middleware
+$container->set(AuthRequired::class, static function () {
+    return new AuthRequired();
 });
 
 // Register all controllers

@@ -46,3 +46,10 @@ Although you do not have to use them, this package includes the following librar
 
 If you are using a database in your application, the above libraries are likely to make
 your life much easier.
+
+## Middleware
+
+This skeleton repository comes with an `AuthRequired` middleware class, which can be used
+to place routes behind a authentication wall. You will need to either make sure that your
+authentication code sets `$_SESSION['logged_in']` to `true` when the user is authenticated,
+or edit the class to use your authentication process.

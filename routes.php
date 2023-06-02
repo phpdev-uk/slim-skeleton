@@ -8,3 +8,8 @@ use App\Controllers\PageController;
 
 $app->get('/', PageController::class . ':index')->setName('index');
 $app->post('/', PageController::class . ':index')->setName('csrf');
+
+/**
+ * @todo Add the following to any routes/groups which require authentication:
+ * ->add($container->get(AuthRequired::class));
+ */
