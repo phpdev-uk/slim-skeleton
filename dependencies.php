@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Controllers\PageController;
 use App\TwigExtension\CsrfExtension;
 use DI\Container;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
 use Dotenv\Dotenv;
 use Psr\Container\ContainerInterface;
@@ -70,7 +71,7 @@ $container->set('database', static function () {
 
     $config = ORMSetup::createAnnotationMetadataConfiguration([]);
 
-    return Doctrine\ORM\EntityManager::create($connection, $config);
+    return EntityManager::create($connection, $config);
 });
 
 // Register all controllers
