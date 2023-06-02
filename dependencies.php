@@ -5,7 +5,9 @@ declare(strict_types=1);
 use App\Controllers\PageController;
 use App\TwigExtension\CsrfExtension;
 use DI\Container;
+use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\ORMSetup;
 use Dotenv\Dotenv;
 use Psr\Container\ContainerInterface;
@@ -61,17 +63,20 @@ if (isset($_ENV['APP_CSRF_PROTECTION']) && $_ENV['APP_CSRF_PROTECTION'] === 'on'
 }
 
 $container->set('database', static function () {
-    $connection = [
-        'driver' => 'pdo_mysql',
-        'user' => $_ENV['APP_DATABASE_USER'],
-        'password' => $_ENV['APP_DATABASE_PASSWORD'],
-        'dbname' => $_ENV['APP_DATABASE_NAME'],
-        'host' => $_ENV['APP_DATABASE_HOST']
-    ];
-
     $config = ORMSetup::createAnnotationMetadataConfiguration([]);
 
-    return EntityManager::create($connection, $config);
+    $connection = DriverManager::getConnection(
+        [
+            'driver' => 'pdo_mysql',
+            'user' => $_ENV['APP_DATABASE_USER'],
+            'password' => $_ENV['APP_DATABASE_PASSWORD'],
+            'dbname' => $_ENV['APP_DATABASE_NAME'],
+            'host' => $_ENV['APP_DATABASE_HOST']
+        ],
+        $config
+    );
+
+    return new EntityManager($connection, $config);
 });
 
 // Register all controllers
