@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Controllers\PageController;
+use App\Controller\PageController;
 use App\Middleware\AuthRequired;
 use App\TwigExtension\CsrfExtension;
 use DI\Container;
