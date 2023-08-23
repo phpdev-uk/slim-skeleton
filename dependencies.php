@@ -52,6 +52,13 @@ $container->set('view', static function () {
 // CSRF protection is optional as it requires cookies and this may present
 // privacy and data protection issues
 if (isset($_ENV['APP_CSRF_PROTECTION']) && $_ENV['APP_CSRF_PROTECTION'] === 'on') {
+    // Set sensible secure default session cookie options, even if php.ini does not
+    session_set_cookie_params([
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Lax',
+    ]);
+
     session_start();
 
     $container->set('csrf', static function () use ($app) {
