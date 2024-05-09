@@ -20,7 +20,7 @@ class PageController
         $this->view = $view;
     }
 
-    public function index(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
+    public function index(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
         return $this->view->render(
             $response,
