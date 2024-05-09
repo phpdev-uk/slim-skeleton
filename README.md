@@ -33,9 +33,12 @@ Visit [https://docker.localhost](https://docker.localhost) in your browser.
 
 This skeleton application makes the following assumptions about your application environment:
 
-* PHP 7.4
+* PHP 8.3
 * Single MariaDB database
 * Debian Bullseye (latest stable release)
+
+If you need PHP 7.4, please use the php74 branch. However, this is not actively maintained and
+will only receive security updates.
 
 ## Included libraries
 

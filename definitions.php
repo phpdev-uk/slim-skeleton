@@ -24,7 +24,7 @@ $definitions[Twig::class] = function () {
 };
 
 $definitions[EntityManager::class] = function () {
-    $config = ORMSetup::createAnnotationMetadataConfiguration([]);
+    $config = ORMSetup::createAttributeMetadataConfiguration([]);
 
     $connection = DriverManager::getConnection(
         [
