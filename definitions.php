@@ -18,7 +18,15 @@ $definitions[Twig::class] = function () {
         ]
     );
 
+    $flash = [];
+
+    if (isset($_SESSION['flash'])) {
+        $flash = $_SESSION['flash'];
+        $_SESSION['flash'] = [];
+    }
+
     $twig->addExtension(new IntlExtension());
+    $twig->getEnvironment()->addGlobal('flash', $flash);
 
     return $twig;
 };
