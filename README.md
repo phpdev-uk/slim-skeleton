@@ -60,3 +60,8 @@ or edit the class to use your authentication process.
 The setup assumes that you are using sessions for authentication. In order for `session_start`
 to be called, you must enable CSRF protection in your `.env` file (it is enabled by default).
 Authentication without CSRF is **not** recommended.
+
+## Flash messages
+
+A very simple flash messages implementation is included. Anything added to `$_SESSION['flash']`
+will be passed into the Twig template, and the flash messages will be reset for the next request.
