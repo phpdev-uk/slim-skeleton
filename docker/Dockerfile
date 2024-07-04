@@ -10,11 +10,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         libzip-dev \
         libicu-dev
 
-RUN docker-php-ext-install bcmath
-RUN docker-php-ext-install gd
-RUN docker-php-ext-install intl
-RUN docker-php-ext-install mysqli pdo pdo_mysql
-RUN docker-php-ext-install zip
+RUN docker-php-ext-install bcmath gd intl mysqli pdo pdo_mysql zip
 
 RUN pecl install xdebug-3.3.2 && docker-php-ext-enable xdebug
 
