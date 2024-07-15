@@ -19,7 +19,7 @@ RUN /usr/bin/openssl req -new -x509 -key ${PRIVATE_KEY_PATH} -out ${CERTIFICATE_
 
 COPY apache/sites-available/${SITE_HOST}.conf /etc/apache2/sites-available/
 COPY php/* /usr/local/etc/php/conf.d/
-RUN a2enmod rewrite ssl
+RUN a2enmod headers rewrite ssl
 RUN a2ensite ${SITE_HOST}
 RUN service apache2 restart
 EXPOSE 443
