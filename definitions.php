@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Environment;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
@@ -29,6 +30,10 @@ $definitions[Twig::class] = function () {
     $twig->getEnvironment()->addGlobal('flash', $flash);
 
     return $twig;
+};
+
+$definitions[Environment::class] = function () {
+    return new Environment($_ENV);
 };
 
 $definitions[EntityManager::class] = function () {
