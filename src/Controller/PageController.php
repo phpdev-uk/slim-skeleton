@@ -13,11 +13,9 @@ use Slim\Views\Twig;
  */
 class PageController
 {
-    private $view;
-
-    public function __construct(Twig $view)
-    {
-        $this->view = $view;
+    public function __construct(
+        private readonly Twig $view
+    ) {
     }
 
     public function index(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
