@@ -15,7 +15,7 @@ services:
       - mailpit
 
   mailpit:
-    image: axllent/mailpit:v1.21.0
+    image: axllent/mailpit:v1.24.1
     ports:
       - "8025:8025"
 
