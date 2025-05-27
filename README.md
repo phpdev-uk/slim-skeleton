@@ -65,3 +65,12 @@ Authentication without CSRF is **not** recommended.
 
 A very simple flash messages implementation is included. Anything added to `$_SESSION['flash']`
 will be passed into the Twig template, and the flash messages will be reset for the next request.
+
+## Sites using this package
+
+Sites started using this package include:
+
+* [Pick a Date](https://pickadate.uk)
+* [Viking Mind](https://vikingmind.uk)
+
+Plus some commercial projects which are proprietary and confidential.
