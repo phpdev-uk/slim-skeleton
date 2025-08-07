@@ -12,7 +12,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 
 RUN docker-php-ext-install bcmath gd intl mysqli pdo pdo_mysql zip
 
-RUN pecl install xdebug-3.3.2 && docker-php-ext-enable xdebug
+RUN pecl install xdebug-3.4.5 && docker-php-ext-enable xdebug
 
 RUN /usr/bin/openssl genrsa -out ${PRIVATE_KEY_PATH} 2048
 RUN /usr/bin/openssl req -new -x509 -key ${PRIVATE_KEY_PATH} -out ${CERTIFICATE_PATH} -days 90 -subj /CN=${SSL_CN}
