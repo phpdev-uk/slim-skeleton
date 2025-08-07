@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Environment;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\ORMSetup;
 use Slim\Views\Twig;
 use Twig\Extra\Intl\IntlExtension;
@@ -36,7 +37,7 @@ $definitions[Environment::class] = function () {
     return new Environment($_ENV);
 };
 
-$definitions[EntityManager::class] = function () {
+$definitions[EntityManagerInterface::class] = function () {
     $config = ORMSetup::createAttributeMetadataConfiguration([]);
 
     $connection = DriverManager::getConnection(
