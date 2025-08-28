@@ -2,8 +2,8 @@ services:
   web:
     build: docker/
     ports:
-      - "80:80"
-      - "443:443"
+      - "8000:80"
+      - "4433:443"
     volumes:
       - .:/var/www/sites/docker.localhost
     extra_hosts:
