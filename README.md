@@ -27,7 +27,7 @@ Start Docker:
 
 `docker-compose up`
 
-Visit [https://docker.localhost](https://docker.localhost) in your browser.
+Visit [https://docker.localhost:4433](https://docker.localhost:4433) in your browser.
 
 ## Assumptions
 
