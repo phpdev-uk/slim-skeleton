@@ -15,12 +15,12 @@ services:
       - mailpit
 
   mailpit:
-    image: axllent/mailpit:v1.24.1
+    image: docker.io/axllent/mailpit:v1.24.1
     ports:
       - "8025:8025"
 
   database:
-    image: mariadb:10.11
+    image: docker.io/mariadb:10.11
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_DATABASE: "docker"
