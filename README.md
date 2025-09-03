@@ -3,7 +3,7 @@
 Skeleton Slim 4 application for new projects.
 
 This package makes it quicker to bootstrap a new Slim 4 application with common
-dependencies and a local development environment using Docker. It is only
+dependencies and a local development environment using Docker or Podman. It is only
 intended to be used as an initial bootstrap - after that you should commit your
 changes to your own Git repository and manage your Composer dependencies.
 
@@ -25,9 +25,13 @@ Make any changes to `.env`.
 
 Start Docker:
 
-`docker-compose up`
+`docker compose up`
 
-Visit [https://docker.localhost](https://docker.localhost) in your browser.
+Or Podman:
+
+`podman compose up`
+
+Visit [https://docker.localhost:4433](https://docker.localhost:4433) in your browser.
 
 ## Assumptions
 
