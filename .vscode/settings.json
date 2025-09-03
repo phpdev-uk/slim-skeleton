@@ -2,5 +2,8 @@
     "search.exclude": {
         "vendor/**": true,
         "docker/mysql/initial_sql/*.sql": true
-    }
+    },
+    "files.associations": {
+        "*.twig": "html"
+    },
 }

@@ -22,7 +22,7 @@ class PageController
     {
         return $this->view->render(
             $response,
-            'index.twig.html',
+            'index.twig',
             []
         );
     }
