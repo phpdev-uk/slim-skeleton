@@ -41,8 +41,8 @@ This skeleton application makes the following assumptions about your application
 * Single MariaDB database
 * Debian Bullseye (latest stable release)
 
-If you need PHP 7.4, please use the php74 branch. However, this is not actively maintained and
-will only receive security updates.
+If you need PHP 7.4, please use the php74 branch. However, this is not maintained and will
+not receive updates.
 
 ## Included libraries
 
