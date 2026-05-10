@@ -1,4 +1,4 @@
-FROM php:8.3-apache-bookworm
+FROM php:8.4-apache-trixie
 
 ARG SITE_HOST=docker.localhost
 ARG SSL_CN=${SITE_HOST}

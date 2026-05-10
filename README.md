@@ -37,12 +37,17 @@ Visit [https://docker.localhost:4433](https://docker.localhost:4433) in your bro
 
 This skeleton application makes the following assumptions about your application environment:
 
-* PHP 8.3
+* PHP 8.4
 * Single MariaDB database
-* Debian Bullseye (latest stable release)
+* Debian Trixie (latest stable release)
 
-If you need PHP 7.4, please use the php74 branch. However, this is not maintained and will
-not receive updates.
+If you need support for older versions of PHP, they are available in the following branches:
+
+ * php74
+ * php83
+
+These branches are not maintained and will not receive security updates as part of the
+open source repository. Commercial support is available from [phpdev.uk](https://www.phpdev.uk).
 
 ## Included libraries
 

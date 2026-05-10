@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.4",
         "ext-mysqli": "*",
         "slim/slim": "4.*",
         "slim/psr7": "^1.5",
@@ -22,21 +22,21 @@
         "doctrine/orm": "^3",
         "vlucas/phpdotenv": "^5.3",
         "php-di/php-di": "^7",
-        "symfony/cache": "^7",
-        "symfony/mailer": "^7",
+        "symfony/cache": "^8",
+        "symfony/mailer": "^8",
         "doctrine/dbal": "^4",
         "doctrine/migrations": "^3.5",
         "slim/csrf": "^1.3",
         "slim/http": "^1.3",
         "php-di/slim-bridge": "^3.4",
-        "psr/http-message": "^1",
-        "symfony/console": "^7.1"
+        "psr/http-message": "^2",
+        "symfony/console": "^8"
     },
     "require-dev": {
-        "phpunit/phpunit": "^11",
-        "phpstan/phpstan": "^1.4",
-        "squizlabs/php_codesniffer": "^3.6",
-        "symfony/var-dumper": "^7"
+        "phpunit/phpunit": "^12",
+        "phpstan/phpstan": "^2",
+        "squizlabs/php_codesniffer": "^4",
+        "symfony/var-dumper": "^8"
     },
     "autoload": {
         "psr-4": {
@@ -53,7 +53,7 @@
     },
     "config": {
         "platform": {
-            "php": "8.3"
+            "php": "8.4"
         }
     },
     "scripts": {
